@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velox - Turning Bottles into Better Sleep | Sustainable Recycling</title>
+    <meta name="description" content="Velox transforms post-consumer plastic bottles into high-quality polyester thread and fiberfill, powering sustainable pillows and soft goods.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://velox.example/">
+    <meta property="og:title" content="Velox - Turning Bottles into Better Sleep">
+    <meta property="og:description" content="Sustainable recycling of plastic bottles into quality polyester thread and fiberfill.">
+    <meta property="og:image" content="https://velox.example/assets/img/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://velox.example/">
+    <meta property="twitter:title" content="Velox - Turning Bottles into Better Sleep">
+    <meta property="twitter:description" content="Sustainable recycling of plastic bottles into quality polyester thread and fiberfill.">
+    <meta property="twitter:image" content="https://velox.example/assets/img/twitter-image.jpg">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Velox",
+        "url": "https://velox.example",
+        "logo": "https://velox.example/assets/img/logo.svg",
+        "description": "Transforms post-consumer plastic bottles into high-quality polyester thread and fiberfill",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+000-000-0000",
+            "contactType": "Customer Service",
+            "email": "hello@velox.example"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Recycling Way",
+            "addressLocality": "Green City",
+            "addressRegion": "GC",
+            "postalCode": "12345"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- 
+    README: VELOX WEBSITE CUSTOMIZATION GUIDE
+    
+    To customize this website:
+    
+    1. COLORS: Edit CSS variables in css/styles.css :root section
+    2. COUNTERS: Update values in js/counters.js
+    3. PRODUCTS: Add/edit products in js/products.json
+    4. TESTIMONIALS: Update testimonials in js/testimonials.json
+    5. JOBS: Manage job listings in js/jobs.json
+    6. CONTENT: Edit HTML directly in each page file
+    7. IMAGES: Replace placeholder images in assets/img/ directory
+    8. FORMS: Configure form endpoints in js/forms.js
+    
+    All interactive elements are keyboard accessible and screen reader friendly.
+    Dark mode toggle is available in the header and persists via localStorage.
+    -->
+
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="index.html">
+                        <img src="images/logo.png">
+                    </a>
+                </div>
+                
+                <nav class="header__nav" id="nav">
+                    <ul class="nav__list">
+                        <li><a href="index.html" class="nav__link" aria-current="page">Home</a></li>
+                        <!-- <li><a href="/process.html" class="nav__link">Process</a></li>
+                        <li><a href="/products.html" class="nav__link">Products</a></li>
+                        <li><a href="/impact.html" class="nav__link">Impact</a></li>
+                        <li><a href="/about.html" class="nav__link">About</a></li>
+                        <li><a href="/careers.html" class="nav__link">Careers</a></li>
+                        <li><a href="/faq.html" class="nav__link">FAQ</a></li>
+                        <li><a href="/blog.html" class="nav__link">News</a></li> -->
+                        <li><a href="ai.html" class="nav__link nav__link--active">Assistant</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="theme-icon theme-icon--light" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="theme-icon theme-icon--dark" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="m21 12.79a9 9 0 1 1-6.79-6.79v0a9 9 0 0 0 6.79 6.79z"></path>
+                        </svg>
+                    </button>
+                    <button class="btn btn--primary" onclick="openQuoteModal()">Request a Quote</button>
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="ai-iframe-wrap">
+                <div class="ai-iframe-card">
+                    <iframe
+                        src="https://www.chatbase.co/chatbot-iframe/FSNUqw7kVWe0Ww-lXvaYk"
+                        width="100%"
+                        height="700"
+                        style="border:0;"
+                        frameborder="0"
+                        title="Velox Assistant"
+                        loading="lazy"
+                    ></iframe>
+                </div>
+                <p class="ai-iframe-note">Tip: If the chat doesn't load, try disabling any strict adblockers or allowlisted this site.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer copied from index.html -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__logo">
+                        <!-- <svg width="100" height="32" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 8L16 24L24 8H32L20 32H12L0 8H8Z" fill="currentColor"/>
+                            <path d="M40 12C40 10.9 40.9 10 42 10H54C55.1 10 56 10.9 56 12V16H48V14H44V26H48V24H56V28C56 29.1 55.1 30 54 30H42C40.9 30 40 29.1 40 28V12Z" fill="currentColor"/>
+                            <path d="M60 30V10H68V26H76V10H84V30H76V18H68V30H60Z" fill="currentColor"/>
+                            <path d="M88 20C88 14.5 92.5 10 98 10C103.5 10 108 14.5 108 20C108 25.5 103.5 30 98 30C92.5 30 88 25.5 88 20ZM96 20C96 21.1 96.9 22 98 22C99.1 22 100 21.1 100 20C100 18.9 99.1 18 98 18C96.9 18 96 18.9 96 20Z" fill="currentColor"/>
+                            <path d="M112 24L118 10H120L116 24L120 30H118L112 24Z" fill="currentColor"/>
+                        </svg> -->
+                    </div>
+                    <p class="footer__description">Transforming plastic bottles into sustainable solutions for a better tomorrow.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="LinkedIn" class="social-link">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001zM8.449 16.988c-1.297 0-2.348-1.051-2.348-2.348 0-1.297 1.051-2.348 2.348-2.348 1.297 0 2.347 1.051 2.347 2.348 0 1.297-1.05 2.348-2.347 2.348zm3.563 0c-1.297 0-2.348-1.051-2.348-2.348 0-1.297 1.051-2.348 2.348-2.348s2.348 1.051 2.348 2.348c0 1.297-1.051 2.348-2.348 2.348z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/careers.html">Careers</a></li>
+                        <li><a href="/impact.html">Our Impact</a></li>
+                        <li><a href="/blog.html">News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Products</h4>
+                    <ul class="footer__links">
+                        <li><a href="/products.html">All Products</a></li>
+                        <li><a href="/products.html#pillows">Pillows</a></li>
+                        <li><a href="/products.html#fiberfill">Fiberfill</a></li>
+                        <li><a href="/products.html#yarn">Thread & Yarn</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Support</h4>
+                    <ul class="footer__links">
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/privacy.html">Privacy</a></li>
+                        <li><a href="/terms.html">Terms</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact">
+                        <p><a href="mailto:velox219@gmail.com">velox219@gmail.com</a></p>
+                        <p><a href="tel:+256759326146">+256 759 326 146</a></p>
+                        <p><a href="tel:+256771634403">+256 771 634 403</a></p>
+                    </div>
+                    <div class="newsletter-signup">
+                        <h5>Stay Updated</h5>
+                        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit" class="btn btn--sm">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 Velox. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div class="modal" id="quote-modal" role="dialog" aria-labelledby="quote-modal-title" aria-hidden="true">
+        <div class="modal__backdrop" onclick="closeQuoteModal()"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 id="quote-modal-title">Request a Quote</h2>
+                <button class="modal__close" onclick="closeQuoteModal()" aria-label="Close modal">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <form class="quote-form" onsubmit="handleQuote(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="quote-name">Name *</label>
+                        <input type="text" id="quote-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-email">Email *</label>
+                        <input type="email" id="quote-email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="quote-company">Company</label>
+                        <input type="text" id="quote-company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-volume">Expected Volume</label>
+                        <input type="text" id="quote-volume" name="volume" placeholder="e.g., 1000 kg/month">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="quote-product">Product Interest</label>
+                    <select id="quote-product" name="product">
+                        <option value="">Select a product...</option>
+                        <option value="fiberfill">Fiberfill</option>
+                        <option value="thread">Thread & Yarn</option>
+                        <option value="pillows">Finished Pillows</option>
+                        <option value="custom">Custom Solution</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quote-message">Message</label>
+                    <textarea id="quote-message" name="message" rows="4" placeholder="Tell us about your requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full">Send Quote Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="alert" aria-live="polite" aria-atomic="true">
+        <div class="toast-content">
+            <span class="toast-message"></span>
+            <button class="toast-close" onclick="hideToast()" aria-label="Close notification">×</button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5,12 12,5 19,12"></polyline>
+        </svg>
+    </button>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/counters.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/slider.js"></script>
+
+</body>
+</html>

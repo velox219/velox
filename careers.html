@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Velox | Join Our Sustainable Mission</title>
+    <meta name="description" content="Join Velox's mission to transform plastic waste into sustainable products. Explore career opportunities in green technology and manufacturing.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://velox.example/careers.html">
+    <meta property="og:title" content="Careers - Velox">
+    <meta property="og:description" content="Join our team building a sustainable future through innovative recycling technology.">
+    <meta property="og:image" content="https://velox.example/assets/img/careers-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://velox.example/careers.html">
+    <meta property="twitter:title" content="Careers - Velox">
+    <meta property="twitter:description" content="Join our team building a sustainable future through innovative recycling technology.">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="/" aria-label="Velox Home">
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 8L16 24L24 8H32L20 32H12L0 8H8Z" fill="currentColor"/>
+                            <path d="M40 12C40 10.9 40.9 10 42 10H54C55.1 10 56 10.9 56 12V16H48V14H44V26H48V24H56V28C56 29.1 55.1 30 54 30H42C40.9 30 40 29.1 40 28V12Z" fill="currentColor"/>
+                            <path d="M60 30V10H68V26H76V10H84V30H76V18H68V30H60Z" fill="currentColor"/>
+                            <path d="M88 20C88 14.5 92.5 10 98 10C103.5 10 108 14.5 108 20C108 25.5 103.5 30 98 30C92.5 30 88 25.5 88 20ZM96 20C96 21.1 96.9 22 98 22C99.1 22 100 21.1 100 20C100 18.9 99.1 18 98 18C96.9 18 96 18.9 96 20Z" fill="currentColor"/>
+                            <path d="M112 24L118 10H120L116 24L120 30H118L112 24Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <nav class="header__nav" id="nav">
+                    <ul class="nav__list">
+                        <li><a href="/" class="nav__link">Home</a></li>
+                        <li><a href="/process.html" class="nav__link">Process</a></li>
+                        <li><a href="/products.html" class="nav__link">Products</a></li>
+                        <li><a href="/impact.html" class="nav__link">Impact</a></li>
+                        <li><a href="/about.html" class="nav__link">About</a></li>
+                        <li><a href="/careers.html" class="nav__link nav__link--active" aria-current="page">Careers</a></li>
+                        <li><a href="/faq.html" class="nav__link">FAQ</a></li>
+                        <li><a href="/blog.html" class="nav__link">News</a></li>
+                        <li><a href="/contact.html" class="nav__link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="theme-icon theme-icon--light" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="theme-icon theme-icon--dark" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="m21 12.79a9 9 0 1 1-6.79-6.79v0a9 9 0 0 0 6.79 6.79z"></path>
+                        </svg>
+                    </button>
+                    <button class="btn btn--primary" onclick="openQuoteModal()">Request a Quote</button>
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content text-center">
+                    <h1 class="hero__title">Join Our Mission</h1>
+                    <p class="hero__subtitle">Build the future of sustainable manufacturing with a passionate team dedicated to transforming waste into wonder. Make a real impact on the environment while advancing your career.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Work Here -->
+        <section class="section why-work-here">
+            <div class="container">
+                <div class="section__header text-center">
+                    <h2 class="section__title">Why Work at Velox?</h2>
+                    <p class="section__subtitle">Join a company where your work directly contributes to environmental sustainability</p>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                            </svg>
+                        </div>
+                        <h3>Meaningful Impact</h3>
+                        <p>Your work directly contributes to reducing plastic waste and advancing the circular economy.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            </svg>
+                        </div>
+                        <h3>Learning & Growth</h3>
+                        <p>Continuous learning opportunities with access to cutting-edge sustainable technology and processes.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>Collaborative Culture</h3>
+                        <p>Work with passionate, diverse teams in an inclusive environment that values innovation and creativity.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <h3>Work-Life Balance</h3>
+                        <p>Flexible working arrangements, competitive time off, and comprehensive health benefits.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                            </svg>
+                        </div>
+                        <h3>Innovation Focus</h3>
+                        <p>Be part of groundbreaking research and development in sustainable manufacturing technology.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <h3>Career Development</h3>
+                        <p>Clear advancement paths with mentorship programs and professional development support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Positions -->
+        <section class="section open-positions">
+            <div class="container">
+                <div class="section__header text-center">
+                    <h2 class="section__title">Open Positions</h2>
+                    <p class="section__subtitle">Find your next role in sustainable manufacturing</p>
+                </div>
+                
+                <div class="jobs-filter">
+                    <div class="filter-group">
+                        <label for="department-filter">Department:</label>
+                        <select id="department-filter" onchange="filterJobs()">
+                            <option value="">All Departments</option>
+                            <option value="engineering">Engineering</option>
+                            <option value="operations">Operations</option>
+                            <option value="sales">Sales & Marketing</option>
+                            <option value="admin">Administration</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="location-filter">Location:</label>
+                        <select id="location-filter" onchange="filterJobs()">
+                            <option value="">All Locations</option>
+                            <option value="on-site">On-site</option>
+                            <option value="hybrid">Hybrid</option>
+                            <option value="remote">Remote</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="jobs-list" id="jobs-list">
+                    <!-- Jobs will be loaded here via JavaScript -->
+                </div>
+                
+                <div class="jobs-empty" id="jobs-empty" style="display: none;">
+                    <div class="empty-state">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                        <h3>No positions found</h3>
+                        <p>Try adjusting your filters or check back later for new opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Culture -->
+        <section class="section company-culture">
+            <div class="container">
+                <div class="culture-content">
+                    <div class="culture-text">
+                        <h2>Our Culture</h2>
+                        <p class="culture-subtitle">We believe in creating an environment where everyone can thrive while making a positive impact on the world.</p>
+                        
+                        <div class="culture-values">
+                            <div class="culture-value">
+                                <h4>Diversity & Inclusion</h4>
+                                <p>We celebrate different perspectives and backgrounds, knowing that diversity drives innovation and better decision-making.</p>
+                            </div>
+                            
+                            <div class="culture-value">
+                                <h4>Continuous Learning</h4>
+                                <p>We invest in our team's growth through training programs, conferences, and educational opportunities.</p>
+                            </div>
+                            
+                            <div class="culture-value">
+                                <h4>Environmental Responsibility</h4>
+                                <p>Our commitment to sustainability extends beyond our products to how we operate as a company.</p>
+                            </div>
+                            
+                            <div class="culture-value">
+                                <h4>Innovation & Creativity</h4>
+                                <p>We encourage experimentation and creative problem-solving to advance our mission.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="culture-visual">
+                        <div class="culture-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">147</span>
+                                <span class="stat-label">Team Members</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">92%</span>
+                                <span class="stat-label">Employee Satisfaction</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">15</span>
+                                <span class="stat-label">Countries Represented</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">3.2</span>
+                                <span class="stat-label">Years Avg. Tenure</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits -->
+        <section class="section benefits-section">
+            <div class="container">
+                <div class="section__header text-center">
+                    <h2 class="section__title">Comprehensive Benefits</h2>
+                    <p class="section__subtitle">We take care of our team so they can focus on making an impact</p>
+                </div>
+                
+                <div class="benefits-categories">
+                    <div class="benefits-category">
+                        <h3>Health & Wellness</h3>
+                        <ul class="benefits-list">
+                            <li>Comprehensive health insurance (medical, dental, vision)</li>
+                            <li>Mental health support and counseling services</li>
+                            <li>Fitness center membership reimbursement</li>
+                            <li>Annual wellness allowance</li>
+                            <li>Employee assistance program</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefits-category">
+                        <h3>Time Off & Flexibility</h3>
+                        <ul class="benefits-list">
+                            <li>Unlimited PTO policy</li>
+                            <li>12 company holidays plus floating holidays</li>
+                            <li>Parental leave (16 weeks paid)</li>
+                            <li>Sabbatical program after 5 years</li>
+                            <li>Flexible working hours and remote options</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefits-category">
+                        <h3>Financial Benefits</h3>
+                        <ul class="benefits-list">
+                            <li>Competitive salary with annual reviews</li>
+                            <li>Performance-based bonuses</li>
+                            <li>401(k) with company matching</li>
+                            <li>Stock options program</li>
+                            <li>Professional development budget</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="benefits-category">
+                        <h3>Growth & Development</h3>
+                        <ul class="benefits-list">
+                            <li>Individual career development plans</li>
+                            <li>Mentorship and coaching programs</li>
+                            <li>Conference and training attendance</li>
+                            <li>Internal mobility opportunities</li>
+                            <li>Tuition reimbursement program</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Process -->
+        <section class="section application-process">
+            <div class="container">
+                <div class="section__header text-center">
+                    <h2 class="section__title">Application Process</h2>
+                    <p class="section__subtitle">Here's what to expect when you apply to join our team</p>
+                </div>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Application</h3>
+                        <p>Submit your application with resume and cover letter through our online portal.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Initial Review</h3>
+                        <p>Our talent team reviews your application and provides feedback within one week.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Phone/Video Interview</h3>
+                        <p>Initial conversation with hiring manager to discuss your experience and the role.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>On-site/Virtual Interviews</h3>
+                        <p>Meet with team members and leadership to explore mutual fit and culture alignment.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3>Reference Check</h3>
+                        <p>We'll connect with your references to learn more about your work style and impact.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h3>Offer & Onboarding</h3>
+                        <p>Receive your offer and join our comprehensive onboarding program.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content text-center">
+                    <h2 class="cta-title">Ready to Make an Impact?</h2>
+                    <p class="cta-subtitle">Join Velox and help us build a sustainable future. Even if you don't see a perfect fit today, we'd love to hear from you.</p>
+                    <div class="cta-actions">
+                        <a href="mailto:careers@velox.example" class="btn btn--primary btn--large">Apply Now</a>
+                        <a href="/contact.html" class="btn btn--secondary btn--large">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__logo">
+                        <svg width="100" height="32" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 8L16 24L24 8H32L20 32H12L0 8H8Z" fill="currentColor"/>
+                            <path d="M40 12C40 10.9 40.9 10 42 10H54C55.1 10 56 10.9 56 12V16H48V14H44V26H48V24H56V28C56 29.1 55.1 30 54 30H42C40.9 30 40 29.1 40 28V12Z" fill="currentColor"/>
+                            <path d="M60 30V10H68V26H76V10H84V30H76V18H68V30H60Z" fill="currentColor"/>
+                            <path d="M88 20C88 14.5 92.5 10 98 10C103.5 10 108 14.5 108 20C108 25.5 103.5 30 98 30C92.5 30 88 25.5 88 20ZM96 20C96 21.1 96.9 22 98 22C99.1 22 100 21.1 100 20C100 18.9 99.1 18 98 18C96.9 18 96 18.9 96 20Z" fill="currentColor"/>
+                            <path d="M112 24L118 10H120L116 24L120 30H118L112 24Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <p class="footer__description">Transforming plastic bottles into sustainable solutions for a better tomorrow.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="LinkedIn" class="social-link">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001zM8.449 16.988c-1.297 0-2.348-1.051-2.348-2.348 0-1.297 1.051-2.348 2.348-2.348 1.297 0 2.347 1.051 2.347 2.348 0 1.297-1.05 2.348-2.347 2.348zm3.563 0c-1.297 0-2.348-1.051-2.348-2.348 0-1.297 1.051-2.348 2.348-2.348s2.348 1.051 2.348 2.348c0 1.297-1.051 2.348-2.348 2.348z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/careers.html">Careers</a></li>
+                        <li><a href="/impact.html">Our Impact</a></li>
+                        <li><a href="/blog.html">News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Products</h4>
+                    <ul class="footer__links">
+                        <li><a href="/products.html">All Products</a></li>
+                        <li><a href="/products.html#thread">Thread & Yarn</a></li>
+                        <li><a href="/products.html#fiberfill">Fiberfill</a></li>
+                        <li><a href="/products.html#pillows">Finished Pillows</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Support</h4>
+                    <ul class="footer__links">
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/privacy.html">Privacy</a></li>
+                        <li><a href="/terms.html">Terms</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact">
+                        <p><a href="mailto:hello@velox.example">hello@velox.example</a></p>
+                        <p><a href="tel:+0000000000">+000 000 0000</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 Velox. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div class="modal" id="quote-modal" role="dialog" aria-labelledby="quote-modal-title" aria-hidden="true">
+        <div class="modal__backdrop" onclick="closeQuoteModal()"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 id="quote-modal-title">Request a Quote</h2>
+                <button class="modal__close" onclick="closeQuoteModal()" aria-label="Close modal">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <form class="quote-form" onsubmit="handleQuote(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="quote-name">Name *</label>
+                        <input type="text" id="quote-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-email">Email *</label>
+                        <input type="email" id="quote-email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="quote-company">Company</label>
+                        <input type="text" id="quote-company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-volume">Expected Volume</label>
+                        <input type="text" id="quote-volume" name="volume" placeholder="e.g., 1000 kg/month">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="quote-product">Product Interest</label>
+                    <select id="quote-product" name="product">
+                        <option value="">Select a product...</option>
+                        <option value="fiberfill">Fiberfill</option>
+                        <option value="thread">Thread & Yarn</option>
+                        <option value="pillows">Finished Pillows</option>
+                        <option value="custom">Custom Solution</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quote-message">Message</label>
+                    <textarea id="quote-message" name="message" rows="4" placeholder="Tell us about your requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full">Send Quote Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="alert" aria-live="polite" aria-atomic="true">
+        <div class="toast-content">
+            <span class="toast-message"></span>
+            <button class="toast-close" onclick="hideToast()" aria-label="Close notification">×</button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5,12 12,5 19,12"></polyline>
+        </svg>
+    </button>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+    <script>
+        // Careers page functionality
+        let allJobs = [];
+        let filteredJobs = [];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadJobs();
+        });
+
+        async function loadJobs() {
+            try {
+                const response = await fetch('/js/jobs.json');
+                allJobs = await response.json();
+                filteredJobs = [...allJobs];
+                renderJobs();
+            } catch (error) {
+                console.error('Error loading jobs:', error);
+                document.getElementById('jobs-list').innerHTML = 
+                    '<div class="error-state text-center"><p>Unable to load job listings at this time. Please try again later.</p></div>';
+            }
+        }
+
+        function renderJobs() {
+            const jobsList = document.getElementById('jobs-list');
+            const emptyState = document.getElementById('jobs-empty');
+            
+            if (filteredJobs.length === 0) {
+                jobsList.style.display = 'none';
+                emptyState.style.display = 'block';
+                return;
+            }
+            
+            jobsList.style.display = 'block';
+            emptyState.style.display = 'none';
+            
+            jobsList.innerHTML = filteredJobs.map(job => `
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3 class="job-title">${job.title}</h3>
+                        <div class="job-meta">
+                            <span class="job-department">${job.department}</span>
+                            <span class="job-location">${job.location}</span>
+                            <span class="job-type">${job.type}</span>
+                        </div>
+                    </div>
+                    <div class="job-content">
+                        <p class="job-description">${job.description}</p>
+                        <div class="job-requirements">
+                            <h4>Key Requirements:</h4>
+                            <ul>
+                                ${job.requirements.slice(0, 3).map(req => `<li>${req}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="job-footer">
+                        <span class="job-posted">Posted ${job.posted}</span>
+                        <a href="mailto:${job.applyEmail}?subject=Application for ${job.title}" class="btn btn--primary">Apply Now</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterJobs() {
+            const departmentFilter = document.getElementById('department-filter').value;
+            const locationFilter = document.getElementById('location-filter').value;
+            
+            filteredJobs = allJobs.filter(job => {
+                const departmentMatch = !departmentFilter || job.department.toLowerCase() === departmentFilter;
+                const locationMatch = !locationFilter || job.location.toLowerCase().includes(locationFilter);
+                
+                return departmentMatch && locationMatch;
+            });
+            
+            renderJobs();
+        }
+
+        // Global function for filtering
+        window.filterJobs = filterJobs;
+    </script>
+
+    <style>
+        /* Careers page specific styles */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .benefit-card {
+            background-color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            border: 1px solid var(--color-border);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .benefit-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            margin-bottom: var(--space-4);
+        }
+
+        .benefit-card h3 {
+            margin-bottom: var(--space-3);
+            color: var(--color-ink);
+        }
+
+        .jobs-filter {
+            display: flex;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+
+        .filter-group label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-ink);
+        }
+
+        .filter-group select {
+            min-width: 200px;
+            padding: var(--space-2) var(--space-3);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            background-color: var(--color-surface);
+            color: var(--color-ink);
+        }
+
+        .jobs-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-5);
+        }
+
+        .job-card {
+            background-color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            padding: var(--space-6);
+            transition: var(--transition);
+        }
+
+        .job-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .job-header {
+            margin-bottom: var(--space-4);
+        }
+
+        .job-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+            color: var(--color-ink);
+        }
+
+        .job-meta {
+            display: flex;
+            gap: var(--space-3);
+            flex-wrap: wrap;
+        }
+
+        .job-meta span {
+            padding: var(--space-1) var(--space-3);
+            background-color: var(--color-bg);
+            border-radius: var(--radius-sm);
+            font-size: 0.875rem;
+            color: var(--color-muted);
+        }
+
+        .job-department {
+            background-color: var(--color-primary) !important;
+            color: white !important;
+        }
+
+        .job-description {
+            margin-bottom: var(--space-4);
+            color: var(--color-muted);
+            line-height: 1.6;
+        }
+
+        .job-requirements h4 {
+            margin-bottom: var(--space-2);
+            font-size: 1rem;
+            color: var(--color-ink);
+        }
+
+        .job-requirements ul {
+            list-style: none;
+            margin-bottom: var(--space-4);
+        }
+
+        .job-requirements li {
+            position: relative;
+            padding-left: var(--space-4);
+            margin-bottom: var(--space-1);
+            color: var(--color-muted);
+            font-size: 0.875rem;
+        }
+
+        .job-requirements li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .job-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: var(--space-4);
+            padding-top: var(--space-4);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .job-posted {
+            font-size: 0.875rem;
+            color: var(--color-muted);
+        }
+
+        .culture-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-8);
+            align-items: start;
+        }
+
+        @media (min-width: 1024px) {
+            .culture-content {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .culture-subtitle {
+            font-size: 1.125rem;
+            color: var(--color-muted);
+            margin-bottom: var(--space-5);
+        }
+
+        .culture-values {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .culture-value h4 {
+            margin-bottom: var(--space-2);
+            color: var(--color-ink);
+        }
+
+        .culture-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+            padding: var(--space-6);
+            background-color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            position: sticky;
+            top: var(--space-6);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-muted);
+            margin-top: var(--space-1);
+        }
+
+        .benefits-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .benefits-category {
+            background-color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            border: 1px solid var(--color-border);
+        }
+
+        .benefits-category h3 {
+            margin-bottom: var(--space-4);
+            color: var(--color-ink);
+            font-size: 1.25rem;
+        }
+
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefits-list li {
+            position: relative;
+            padding-left: var(--space-4);
+            margin-bottom: var(--space-2);
+            color: var(--color-muted);
+            font-size: 0.875rem;
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .process-step {
+            text-align: center;
+            padding: var(--space-5);
+            background-color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+        }
+
+        .process-step h3 {
+            margin-bottom: var(--space-2);
+            color: var(--color-ink);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: var(--space-9) var(--space-4);
+            color: var(--color-muted);
+        }
+
+        .empty-state svg {
+            margin: 0 auto var(--space-4);
+            opacity: 0.5;
+        }
+
+        .empty-state h3 {
+            margin-bottom: var(--space-2);
+            color: var(--color-ink);
+        }
+
+        @media (max-width: 767px) {
+            .jobs-filter {
+                flex-direction: column;
+            }
+            
+            .filter-group select {
+                min-width: auto;
+            }
+            
+            .job-footer {
+                flex-direction: column;
+                gap: var(--space-3);
+                align-items: stretch;
+            }
+            
+            .culture-stats {
+                position: static;
+                margin-top: var(--space-6);
+            }
+        }
+    </style>
+</body>
+</html>

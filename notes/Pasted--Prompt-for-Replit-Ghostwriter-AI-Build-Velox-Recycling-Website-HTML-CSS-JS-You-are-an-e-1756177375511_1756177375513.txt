@@ -1,0 +1,245 @@
+# Prompt for Replit (Ghostwriter / AI) — Build Velox Recycling Website (HTML/CSS/JS)
+
+You are an expert front‑end engineer and brand copywriter. Create a **fast, accessible, responsive website** for **Velox** — a company that **recycles plastic bottles into polyester thread** used to make products like **pillows** and other soft goods. The site should be built with **vanilla HTML, CSS, and JavaScript** (no frameworks) and include production‑quality code, comments, and placeholder assets.
+
+---
+
+## 1) Project scope
+
+* Multi‑page static site with a clean, modern eco‑friendly design.
+* Emphasize the **bottle → flake → pellet → fiber → yarn → product** process.
+* Showcase products (e.g., pillows, cushion inserts, fiberfill) and B2B services (fiber supply, OEM partnerships).
+* Educate visitors about sustainability impact (waste diverted, CO₂ savings, water saved).
+* Drive leads via **Contact** and **Request a Quote** forms.
+
+---
+
+## 2) Site map & pages
+
+Create these pages with navigation + footer on every page:
+
+1. **Home** (`index.html`)
+2. **Process** (`process.html`) — end‑to‑end recycling workflow
+3. **Products** (`products.html`) — pillows and other fiber‑based goods
+4. **Impact** (`impact.html`) — real‑time counters & sustainability metrics
+5. **About** (`about.html`) — mission, certifications, team
+6. **Careers** (`careers.html`) — open roles, culture
+7. **FAQ** (`faq.html`) — common questions
+8. **Blog/News** (`blog.html`) — simple listing with article template `post.html`
+9. **Contact** (`contact.html`) — contact details and forms
+
+Include a **404 page** (`404.html`) and core utility pages (`privacy.html`, `terms.html`).
+
+---
+
+## 3) File structure
+
+```
+/ (project root)
+  index.html
+  process.html
+  products.html
+  impact.html
+  about.html
+  careers.html
+  faq.html
+  blog.html
+  post.html
+  contact.html
+  404.html
+  privacy.html
+  terms.html
+  /assets/
+    /css/
+      reset.css
+      styles.css
+      utilities.css
+    /js/
+      main.js
+      forms.js
+      counters.js
+      animations.js
+      slider.js
+      map.js
+    /img/
+      placeholders/... (SVGs + JPGs)
+      logos/
+      icons/
+  sitemap.xml
+  robots.txt
+```
+
+---
+
+## 4) Visual design & brand guidelines
+
+* **Palette:** deep green `#0B6B53`, leaf green `#1FA37A`, teal `#1CA8A8`, charcoal `#2B2B2B`, off‑white `#F7FBF9`, warm gray `#E8EEE9`.
+* **Typography:** system‑font stack for performance; create CSS utility classes for headings, subheads, body, small.
+* **Style:** airy layout, generous white space, rounded corners, soft shadows, subtle gradients, thin dividers.
+* **Imagery:** use royalty‑free placeholders for bottles, flakes, fiber, spools, factory.
+* **Icons:** inline SVG icons for sustainability stats (leaf, water droplet, CO₂, bottle, factory, thread spool, pillow).
+
+---
+
+## 5) Components (build as reusable HTML snippets + CSS + JS)
+
+* **Header & Nav:** sticky, mobile‑first, hamburger menu; current page highlighted.
+* **Hero section:** strong headline, subcopy, primary CTA (Request a quote), secondary CTA (See our process); background SVG wave.
+* **Process timeline:** 6‑step horizontal/vertical responsive timeline (bottle → thread) with icons and short copy.
+* **Lifecycle diagram:** accessible SVG diagram that can be keyboard‑navigated; tooltip on focus/hover.
+* **Stats counters:** animated counters (IntersectionObserver) showing bottles diverted, CO₂ saved, water saved.
+* **Product cards:** image, short spec, recycled content %, CTA.
+* **Testimonials carousel:** simple, accessible carousel with pause/play and swipe support.
+* **Logos strip:** partner/customer logos grid with grayscale → color hover.
+* **Impact badges:** certifications (e.g., GRS, ISO 9001) as placeholders.
+* **FAQ accordion:** keyboard‑accessible (ARIA) details/summary or custom accordion.
+* **Contact form:** name, email, company, quantity/volume, message; basic client‑side validation.
+* **Quote modal:** open from any CTA; same fields as contact + product interest dropdown.
+* **Footer:** contact info, socials, quick links, newsletter signup.
+* **Alert/Toast:** form success/error feedback.
+* **Back‑to‑top button** and **scroll‑progress bar**.
+
+---
+
+## 6) Copy & messaging (generate readable placeholder text)
+
+Adopt a confident, straightforward tone. Use this sample messaging (expand as needed):
+
+* **Tagline:** “Turning bottles into better sleep.”
+* **Mission:** “Velox transforms post‑consumer plastic bottles into high‑quality polyester thread and fiberfill, powering sustainable pillows and soft goods.”
+* **Value props:**
+
+  * Closed‑loop recycling at scale
+  * Consistent fiber quality for bedding manufacturers
+  * Verified recycled content and traceability
+  * Lower carbon footprint vs. virgin polyester
+* **Process blurbs (one‑liners per step):**
+
+  1. Collection — “We source sorted PET bottles from certified partners.”
+  2. Cleaning — “Bottles are washed, labels removed, and flakes created.”
+  3. Pelletizing — “Purified flakes are melted into uniform PET pellets.”
+  4. Extrusion — “Pellets are extruded into continuous filament fiber.”
+  5. Texturizing — “Fibers are drawn, crimped, and spun into durable thread.”
+  6. Products — “Thread and fiberfill become pillows and more.”
+* **Impact copy examples:** “Every pillow keeps \~30 bottles out of landfills.” (use as a placeholder; show how to change the value in code.)
+
+---
+
+## 7) Interactivity & behavior
+
+* Use **IntersectionObserver** for reveal‑on‑scroll animations (reduce‑motion respected).
+* **Counters:** count up when visible; values editable in `counters.js`.
+* **Carousel/Slider:** pure JS, no dependencies.
+* **Sticky header** that shrinks on scroll.
+* **Mobile menu** with focus trap and ESC to close.
+* **Form validation:** HTML5 + custom messages; prevent submission without required fields; fake async submit with success/error toasts.
+* **Simple site search** (client‑side) that filters FAQ and blog items.
+* **Dark‑mode toggle** (prefers‑color‑scheme with manual override; remember in localStorage).
+
+---
+
+## 8) Accessibility
+
+* Conform to **WCAG 2.2 AA** where feasible.
+* Semantic HTML, proper landmarks, heading order.
+* Label all form controls; visible focus states.
+* Sufficient color contrast; respect `prefers-reduced-motion`.
+* Keyboard support for menus, accordions, carousels, modal.
+* Alt text for images; `aria-live` regions for toasts.
+
+---
+
+## 9) Performance & SEO
+
+* Lightweight, no external libraries.
+* Preload key fonts (if any) and hero images; lazy‑load non‑critical images.
+* Minify CSS/JS via simple build script comments (or provide minified versions alongside source).
+* Add **meta tags** (title, description), **Open Graph**, **Twitter Cards**.
+* Add **JSON‑LD structured data**: `Organization`, `Product`, and `FAQPage` where applicable.
+* Provide `sitemap.xml` and `robots.txt`.
+
+---
+
+## 10) Content blocks per page (minimum)
+
+**Home:** hero, process teaser, product highlights, impact counters, testimonials, logos, CTA.
+**Process:** timeline + lifecycle SVG, gallery of each step, downloadable one‑pager (placeholder link).
+**Products:** filterable grid (pillows, fiberfill, yarn), each card with specs (denier, cut length, recycled %), badging, and CTA.
+**Impact:** live counters, methodology notes, certificates section, case study feature card.
+**About:** mission, story, leadership (3–6 profiles), facility photos, certifications.
+**Careers:** simple job board (client‑side JSON), benefits list, DEI statement.
+**FAQ:** 12–18 Q\&As about recycling, quality, safety, lead times.
+**Blog:** list view with tags; `post.html` template with hero image, headings, quote block, related posts.
+**Contact:** address, map (static image placeholder), forms, social links, newsletter signup.
+
+---
+
+## 11) Example data (use/editable JSON in `/js/` or inline `<script type="application/json">`)
+
+* `products.json` with 6–12 items (name, category, image, recycledPct, specs, sku).
+* `jobs.json` with 3–6 roles (title, location, description, applyEmail).
+* `testimonials.json` with 3–5 quotes.
+
+---
+
+## 12) Footer content (placeholders)
+
+* Velox © 2025 • All rights reserved.
+* Email: [hello@velox.example](mailto:hello@velox.example) • Phone: +000 000 000
+* Socials: LinkedIn, Instagram (icons only; placeholder links)
+
+---
+
+## 13) Deliverables
+
+* All HTML pages and assets per the file tree.
+* Clean, commented **CSS** split into `reset.css`, `styles.css`, `utilities.css`.
+* Modular **JS** in files listed above.
+* At least 5 inline SVG icons and 2 illustrative SVGs (hero wave + lifecycle).
+* README section at the top of `index.html` as HTML comments explaining how to edit counters, add products, change colors, etc.
+
+---
+
+## 14) Bonus (nice to have)
+
+* Print‑friendly CSS for `process.html` (A4 one‑pager).
+* Simple lightbox for gallery images.
+* Cookie‑less analytics placeholder (instructions only).
+* Basic unit tests for utility JS (very small).
+
+---
+
+## 15) Brand variables (make easy to tweak)
+
+Provide CSS variables in `:root` for colors, spacing scale, radius, shadow, and transitions, e.g.:
+
+```css
+:root{
+  --color-primary:#0B6B53;
+  --color-accent:#1FA37A;
+  --color-teal:#1CA8A8;
+  --color-ink:#2B2B2B;
+  --color-bg:#F7FBF9;
+  --radius:14px;
+  --shadow:0 6px 24px rgba(0,0,0,.08);
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px; --space-6:32px;
+}
+```
+
+---
+
+## 16) Quality bar
+
+* Validate HTML; avoid duplicate IDs.
+* No console errors; graceful JS failures.
+* Lighthouse targets: Perf > 90, A11y > 95, SEO > 90 on desktop.
+
+---
+
+## 17) What to output now
+
+Output the full project as files in the specified tree, including commented code and sample copy/images (placeholders). If file streaming isn’t supported, concatenate files with clear `==== FILE: path ====` separators so I can split them.
+
+**Company name:** Velox
+**Primary CTA label:** Request a Quote
+**Secondary CTA label:** See Our Process

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velox - Turning Bottles into Better Sleep | Sustainable Recycling</title>
+    <meta name="description" content="Velox transforms post-consumer plastic bottles into high-quality polyester thread and fiberfill, powering sustainable pillows and soft goods.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://velox.example/">
+    <meta property="og:title" content="Velox - Turning Bottles into Better Sleep">
+    <meta property="og:description" content="Sustainable recycling of plastic bottles into quality polyester thread and fiberfill.">
+    <meta property="og:image" content="https://velox.example/assets/img/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://velox.example/">
+    <meta property="twitter:title" content="Velox - Turning Bottles into Better Sleep">
+    <meta property="twitter:description" content="Sustainable recycling of plastic bottles into quality polyester thread and fiberfill.">
+    <meta property="twitter:image" content="https://velox.example/assets/img/twitter-image.jpg">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Velox",
+        "url": "https://velox.example",
+        "logo": "https://velox.example/assets/img/logo.svg",
+        "description": "Transforms post-consumer plastic bottles into high-quality polyester thread and fiberfill",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+000-000-0000",
+            "contactType": "Customer Service",
+            "email": "hello@velox.example"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Recycling Way",
+            "addressLocality": "Green City",
+            "addressRegion": "GC",
+            "postalCode": "12345"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- 
+    README: VELOX WEBSITE CUSTOMIZATION GUIDE
+    
+    To customize this website:
+    
+    1. COLORS: Edit CSS variables in css/styles.css :root section
+    2. COUNTERS: Update values in js/counters.js
+    3. PRODUCTS: Add/edit products in js/products.json
+    4. TESTIMONIALS: Update testimonials in js/testimonials.json
+    5. JOBS: Manage job listings in js/jobs.json
+    6. CONTENT: Edit HTML directly in each page file
+    7. IMAGES: Replace placeholder images in assets/img/ directory
+    8. FORMS: Configure form endpoints in js/forms.js
+    
+    All interactive elements are keyboard accessible and screen reader friendly.
+    Dark mode toggle is available in the header and persists via localStorage.
+    -->
+
+    <!-- Small top bar for narrow screens (Home + Assistant) -->
+    <div class="topbar" id="topbar">
+        <div class="container topbar__inner">
+            <nav class="topbar__nav">
+                <a href="/" class="topbar__link">Home</a>
+                <a href="ai.html" class="topbar__link">Assistant</a>
+            </nav>
+        </div>
+    </div>
+
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="index.html">
+                        <img src="images/logo.png">
+                    </a>
+                </div>
+                
+                <nav class="header__nav" id="nav">
+                    <ul class="nav__list">
+                        <li><a href="/" class="nav__link nav__link--active" aria-current="page">Home</a></li>
+                        <!-- <li><a href="/process.html" class="nav__link">Process</a></li>
+                        <li><a href="/products.html" class="nav__link">Products</a></li>
+                        <li><a href="/impact.html" class="nav__link">Impact</a></li>
+                        <li><a href="/about.html" class="nav__link">About</a></li>
+                        <li><a href="/careers.html" class="nav__link">Careers</a></li>
+                        <li><a href="/faq.html" class="nav__link">FAQ</a></li>
+                        <li><a href="/blog.html" class="nav__link">News</a></li> -->
+                        <li><a href="ai.html" class="nav__link">Assistant</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="theme-icon theme-icon--light" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="theme-icon theme-icon--dark" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="m21 12.79a9 9 0 1 1-6.79-6.79v0a9 9 0 0 0 6.79 6.79z"></path>
+                        </svg>
+                    </button>
+                    <button class="btn btn--primary" onclick="openQuoteModal()">Request a Quote</button>
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__bg">
+                <svg viewBox="0 0 1200 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero__wave">
+                    <path d="M0,200 C300,100 600,300 1200,200 L1200,400 L0,400 Z" fill="url(#waveGradient)"/>
+                    <defs>
+                        <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:var(--color-primary);stop-opacity:0.1"/>
+                            <stop offset="100%" style="stop-color:var(--color-accent);stop-opacity:0.05"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Turning bottles into better sleep</h1>
+                    <p class="hero__subtitle">Velox transforms post-consumer plastic bottles into high-quality polyester thread and fiberfill, powering sustainable pillows and soft goods for a circular economy.</p>
+                    <div class="hero__actions">
+                        <button class="btn btn--primary btn--large" onclick="openQuoteModal()">Request a Quote</button>
+                        <a href="/process.html" class="btn btn--secondary btn--large">See Our Process</a>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="process-preview">
+                        <div class="process-step" data-step="bottles">
+                            <svg class="process-icon" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L18 2C19.1 2 20 2.9 20 4V20C20 21.1 19.1 22 18 22H6C4.9 22 4 21.1 4 20V4C4 2.9 4.9 2 6 2Z"/>
+                                <path d="M8 6H16"/>
+                                <path d="M8 10H16"/>
+                                <path d="M8 14H16"/>
+                            </svg>
+                            <span>Bottles</span>
+                        </div>
+                        <div class="process-arrow">→</div>
+                        <div class="process-step" data-step="thread">
+                            <svg class="process-icon" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="6"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
+                            <span>Thread</span>
+                        </div>
+                        <div class="process-arrow">→</div>
+                        <div class="process-step" data-step="products">
+                            <svg class="process-icon" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="10" rx="2"/>
+                                <circle cx="12" cy="5" r="2"/>
+                                <path d="M12 7v4"/>
+                            </svg>
+                            <span>Pillows</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Counters -->
+        <section class="impact-counters">
+            <div class="container">
+                <div class="counters-grid">
+                    <div class="counter-card">
+                        <div class="counter-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L18 2C19.1 2 20 2.9 20 4V20C20 21.1 19.1 22 18 22H6C4.9 22 4 21.1 4 20V4C4 2.9 4.9 2 6 2Z"/>
+                                <path d="M8 6H16"/>
+                                <path d="M8 10H16"/>
+                            </svg>
+                        </div>
+                        <div class="counter-content">
+                            <span class="counter-number" data-target="2500000">196</span>
+                            <span class="counter-label">Bottles Recycled</span>
+                        </div>
+                    </div>
+                    <div class="counter-card">
+                        <div class="counter-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                                <path d="M21 3v5h-5"/>
+                                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+                                <path d="M8 16H3v5"/>
+                            </svg>
+                        </div>
+                        <div class="counter-content">
+                            <span class="counter-number" data-target="850000">10,000</span>
+                            <span class="counter-label">kg of Plastics Saved</span>
+                        </div>
+                    </div>
+                    <div class="counter-card">
+                        <div class="counter-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                            </svg>
+                        </div>
+                        <div class="counter-content">
+                            <span class="counter-number" data-target="1200000">10</span>
+                            <span class="counter-label">kg of Fibre Produced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Teaser -->
+        <section class="section process-teaser">
+            <div class="container">
+                <div class="section__header text-center">
+                    <h2 class="section__title">From Waste to Wonder</h2>
+                    <p class="section__subtitle">Our six-step process transforms discarded plastic bottles into premium polyester thread and sustainable products.</p>
+                </div>
+                <div class="process-timeline">
+                    <div class="timeline-step">
+                        <div class="step-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 7l-7 7-3-3-2 2"/>
+                                <path d="M21 15V6h-6"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">Collection</h3>
+                        <p class="step-description">We source sorted PET bottles from certified partners.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">Cleaning</h3>
+                        <p class="step-description">Bottles are washed, labels removed, and flakes created.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="4"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">Pelletizing</h3>
+                        <p class="step-description">Purified flakes are melted into uniform PET pellets.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v6l3-3 3 3"/>
+                                <path d="M12 18v4"/>
+                                <path d="M4.93 4.93l1.41 1.41"/>
+                                <path d="M17.66 17.66l1.41 1.41"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">Extrusion</h3>
+                        <p class="step-description">Pellets are extruded into continuous filament fiber.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.828 14.828a4 4 0 0 1-5.656 0"/>
+                                <path d="M9.172 9.172a4 4 0 0 1 5.656 0"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">Texturizing</h3>
+                        <p class="step-description">Fibers are drawn, crimped, and spun into durable thread.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="10" rx="2"/>
+                                <circle cx="12" cy="5" r="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">Products</h3>
+                        <p class="step-description">Thread and fiberfill become pillows and more.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-6">
+                    <a href="/process.html" class="btn btn--primary">View Full Process</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Highlights -->
+        <section class="section products-preview">
+            <div class="container">
+                <div class="section__header text-center">
+                    <h2 class="section__title">Sustainable Solutions</h2>
+                    <p class="section__subtitle">High-quality products made from recycled materials for conscious consumers and businesses.</p>
+                </div>
+                <div class="product-grid" id="featured-products">
+                    <!-- Products loaded via JavaScript -->
+                </div>
+                <div class="text-center mt-6">
+                    <a href="/products.html" class="btn btn--secondary">View All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section testimonials">
+            <div class="container">
+                <div class="section__header text-center">
+                    <h2 class="section__title">Trusted by Industry Leaders</h2>
+                    <p class="section__subtitle">See what our partners say about our quality and service.</p>
+                </div>
+                <!-- <div class="testimonials-carousel" id="testimonials-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="testimonials-track"> -->
+                            <!-- Testimonials loaded via JavaScript -->
+                        <!-- </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn carousel-btn--prev" id="testimonials-prev" aria-label="Previous testimonial">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn carousel-btn--next" id="testimonials-next" aria-label="Next testimonial">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="carousel-indicators" id="testimonials-indicators"> -->
+                        <!-- Indicators generated via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partner Logos -->
+        <!-- <section class="section partners">
+            <div class="container">
+                <div class="section__header text-center">
+                    <h2 class="section__title">Our Partners</h2>
+                </div>
+                <div class="logos-grid">
+                    <div class="logo-item">
+                        <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="20" width="100" height="20" rx="10" fill="currentColor" opacity="0.3"/>
+                            <text x="60" y="35" text-anchor="middle" fill="currentColor" font-size="12">Partner 1</text>
+                        </svg>
+                    </div>
+                    <div class="logo-item">
+                        <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="60" cy="30" r="20" fill="currentColor" opacity="0.3"/>
+                            <text x="60" y="35" text-anchor="middle" fill="currentColor" font-size="12">Partner 2</text>
+                        </svg>
+                    </div>
+                    <div class="logo-item">
+                        <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="60,10 90,40 30,40" fill="currentColor" opacity="0.3"/>
+                            <text x="60" y="50" text-anchor="middle" fill="currentColor" font-size="12">Partner 3</text>
+                        </svg>
+                    </div>
+                    <div class="logo-item">
+                        <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="15" width="80" height="30" rx="15" fill="currentColor" opacity="0.3"/>
+                            <text x="60" y="35" text-anchor="middle" fill="currentColor" font-size="12">Partner 4</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Final CTA -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content text-center">
+                    <h2 class="cta-title">Ready to Make a Difference?</h2>
+                    <p class="cta-subtitle">Join the circular economy revolution. Request a quote today and discover how Velox can help your business become more sustainable.</p>
+                    <div class="cta-actions">
+                        <button class="btn btn--primary btn--large" onclick="openQuoteModal()">Get Your Quote</button>
+                        <a href="/contact.html" class="btn btn--secondary btn--large">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__logo">
+                        <!-- <svg width="100" height="32" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 8L16 24L24 8H32L20 32H12L0 8H8Z" fill="currentColor"/>
+                            <path d="M40 12C40 10.9 40.9 10 42 10H54C55.1 10 56 10.9 56 12V16H48V14H44V26H48V24H56V28C56 29.1 55.1 30 54 30H42C40.9 30 40 29.1 40 28V12Z" fill="currentColor"/>
+                            <path d="M60 30V10H68V26H76V10H84V30H76V18H68V30H60Z" fill="currentColor"/>
+                            <path d="M88 20C88 14.5 92.5 10 98 10C103.5 10 108 14.5 108 20C108 25.5 103.5 30 98 30C92.5 30 88 25.5 88 20ZM96 20C96 21.1 96.9 22 98 22C99.1 22 100 21.1 100 20C100 18.9 99.1 18 98 18C96.9 18 96 18.9 96 20Z" fill="currentColor"/>
+                            <path d="M112 24L118 10H120L116 24L120 30H118L112 24Z" fill="currentColor"/>
+                        </svg> -->
+                    </div>
+                    <p class="footer__description">Transforming plastic bottles into sustainable solutions for a better tomorrow.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="LinkedIn" class="social-link">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001zM8.449 16.988c-1.297 0-2.348-1.051-2.348-2.348 0-1.297 1.051-2.348 2.348-2.348 1.297 0 2.347 1.051 2.347 2.348 0 1.297-1.05 2.348-2.347 2.348zm3.563 0c-1.297 0-2.348-1.051-2.348-2.348 0-1.297 1.051-2.348 2.348-2.348s2.348 1.051 2.348 2.348c0 1.297-1.051 2.348-2.348 2.348z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/careers.html">Careers</a></li>
+                        <li><a href="/impact.html">Our Impact</a></li>
+                        <li><a href="/blog.html">News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Products</h4>
+                    <ul class="footer__links">
+                        <li><a href="/products.html">All Products</a></li>
+                        <li><a href="/products.html#pillows">Pillows</a></li>
+                        <li><a href="/products.html#fiberfill">Fiberfill</a></li>
+                        <li><a href="/products.html#yarn">Thread & Yarn</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Support</h4>
+                    <ul class="footer__links">
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/privacy.html">Privacy</a></li>
+                        <li><a href="/terms.html">Terms</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact">
+                        <p><a href="mailto:velox219@gmail.com">velox219@gmail.com</a></p>
+                        <p><a href="tel:+256759326146">+256 759 326 146</a></p>
+                        <p><a href="tel:+256771634403">+256 771 634 403</a></p>
+                    </div>
+                    <div class="newsletter-signup">
+                        <h5>Stay Updated</h5>
+                        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit" class="btn btn--sm">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 Velox. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div class="modal" id="quote-modal" role="dialog" aria-labelledby="quote-modal-title" aria-hidden="true">
+        <div class="modal__backdrop" onclick="closeQuoteModal()"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 id="quote-modal-title">Request a Quote</h2>
+                <button class="modal__close" onclick="closeQuoteModal()" aria-label="Close modal">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <form class="quote-form" onsubmit="handleQuote(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="quote-name">Name *</label>
+                        <input type="text" id="quote-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-email">Email *</label>
+                        <input type="email" id="quote-email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="quote-company">Company</label>
+                        <input type="text" id="quote-company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-volume">Expected Volume</label>
+                        <input type="text" id="quote-volume" name="volume" placeholder="e.g., 1000 kg/month">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="quote-product">Product Interest</label>
+                    <select id="quote-product" name="product">
+                        <option value="">Select a product...</option>
+                        <option value="fiberfill">Fiberfill</option>
+                        <option value="thread">Thread & Yarn</option>
+                        <option value="pillows">Finished Pillows</option>
+                        <option value="custom">Custom Solution</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quote-message">Message</label>
+                    <textarea id="quote-message" name="message" rows="4" placeholder="Tell us about your requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full">Send Quote Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="alert" aria-live="polite" aria-atomic="true">
+        <div class="toast-content">
+            <span class="toast-message"></span>
+            <button class="toast-close" onclick="hideToast()" aria-label="Close notification">×</button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5,12 12,5 19,12"></polyline>
+        </svg>
+    </button>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/counters.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/slider.js"></script>
+
+    <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="FSNUqw7kVWe0Ww-lXvaYk";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Process - Velox | Bottle to Thread Recycling Process</title>
+    <meta name="description" content="Learn how Velox transforms plastic bottles into high-quality polyester thread through our six-step sustainable recycling process.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://velox.example/process.html">
+    <meta property="og:title" content="Our Process - Velox">
+    <meta property="og:description" content="Six-step sustainable recycling process transforming plastic bottles into polyester thread.">
+    <meta property="og:image" content="https://velox.example/assets/img/process-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://velox.example/process.html">
+    <meta property="twitter:title" content="Our Process - Velox">
+    <meta property="twitter:description" content="Six-step sustainable recycling process transforming plastic bottles into polyester thread.">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Print-friendly styles -->
+    <style media="print">
+        .header, .footer, .carousel-controls, .modal { display: none !important; }
+        .process-timeline { page-break-inside: avoid; }
+        .lifecycle-diagram { page-break-before: always; }
+        body { font-size: 12pt; line-height: 1.4; }
+        .section { padding: 1rem 0; }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="/" aria-label="Velox Home">
+                        <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 8L16 24L24 8H32L20 32H12L0 8H8Z" fill="currentColor"/>
+                            <path d="M40 12C40 10.9 40.9 10 42 10H54C55.1 10 56 10.9 56 12V16H48V14H44V26H48V24H56V28C56 29.1 55.1 30 54 30H42C40.9 30 40 29.1 40 28V12Z" fill="currentColor"/>
+                            <path d="M60 30V10H68V26H76V10H84V30H76V18H68V30H60Z" fill="currentColor"/>
+                            <path d="M88 20C88 14.5 92.5 10 98 10C103.5 10 108 14.5 108 20C108 25.5 103.5 30 98 30C92.5 30 88 25.5 88 20ZM96 20C96 21.1 96.9 22 98 22C99.1 22 100 21.1 100 20C100 18.9 99.1 18 98 18C96.9 18 96 18.9 96 20Z" fill="currentColor"/>
+                            <path d="M112 24L118 10H120L116 24L120 30H118L112 24Z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <nav class="header__nav" id="nav">
+                    <ul class="nav__list">
+                        <li><a href="/" class="nav__link">Home</a></li>
+                        <li><a href="/process.html" class="nav__link nav__link--active" aria-current="page">Process</a></li>
+                        <li><a href="/products.html" class="nav__link">Products</a></li>
+                        <li><a href="/impact.html" class="nav__link">Impact</a></li>
+                        <li><a href="/about.html" class="nav__link">About</a></li>
+                        <li><a href="/careers.html" class="nav__link">Careers</a></li>
+                        <li><a href="/faq.html" class="nav__link">FAQ</a></li>
+                        <li><a href="/blog.html" class="nav__link">News</a></li>
+                        <li><a href="/contact.html" class="nav__link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__actions">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="theme-icon theme-icon--light" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="theme-icon theme-icon--dark" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="m21 12.79a9 9 0 1 1-6.79-6.79v0a9 9 0 0 0 6.79 6.79z"></path>
+                        </svg>
+                    </button>
+                    <button class="btn btn--primary" onclick="openQuoteModal()">Request a Quote</button>
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content text-center">
+                    <h1 class="hero__title">Our Recycling Process</h1>
+                    <p class="hero__subtitle">Transforming waste into wonder through our innovative six-step process that converts plastic bottles into premium polyester thread and sustainable products.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="section">
+            <div class="container">
+                <div class="process-timeline-detailed">
+                    <div class="timeline-step-detailed">
+                        <div class="step-number">01</div>
+                        <div class="step-visual">
+                            <svg class="step-icon-large" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 7l-7 7-3-3-2 2"/>
+                                <path d="M21 15V6h-6"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Collection & Sorting</h3>
+                            <p class="step-description">We source sorted PET bottles from certified partners and municipal recycling programs. Each bottle is inspected to ensure it meets our quality standards for color, contamination levels, and material composition.</p>
+                            <ul class="step-features">
+                                <li>Partnership with certified waste management facilities</li>
+                                <li>Automated sorting technology for purity</li>
+                                <li>Quality inspection at every stage</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step-detailed">
+                        <div class="step-number">02</div>
+                        <div class="step-visual">
+                            <svg class="step-icon-large" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Cleaning & Preparation</h3>
+                            <p class="step-description">Bottles undergo thorough washing to remove labels, adhesives, and any contaminants. The clean bottles are then shredded into small flakes, creating the raw material for the next stage of processing.</p>
+                            <ul class="step-features">
+                                <li>Hot wash and caustic treatment systems</li>
+                                <li>Label and cap removal technology</li>
+                                <li>Precision shredding to optimal flake size</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step-detailed">
+                        <div class="step-number">03</div>
+                        <div class="step-visual">
+                            <svg class="step-icon-large" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="4"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Pelletizing</h3>
+                            <p class="step-description">Purified flakes are melted and reformed into uniform PET pellets. This critical step ensures consistent material properties and removes any remaining impurities through advanced filtration systems.</p>
+                            <ul class="step-features">
+                                <li>Controlled temperature melting process</li>
+                                <li>Multi-stage filtration for purity</li>
+                                <li>Consistent pellet size and quality</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step-detailed">
+                        <div class="step-number">04</div>
+                        <div class="step-visual">
+                            <svg class="step-icon-large" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v6l3-3 3 3"/>
+                                <path d="M12 18v4"/>
+                                <path d="M4.93 4.93l1.41 1.41"/>
+                                <path d="M17.66 17.66l1.41 1.41"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Extrusion</h3>
+                            <p class="step-description">PET pellets are heated and extruded through precision spinnerets to create continuous filament fibers. This process transforms solid plastic into workable thread material with specific diameter and strength characteristics.</p>
+                            <ul class="step-features">
+                                <li>Precision spinneret technology</li>
+                                <li>Controlled fiber diameter and properties</li>
+                                <li>Continuous production monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step-detailed">
+                        <div class="step-number">05</div>
+                        <div class="step-visual">
+                            <svg class="step-icon-large" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.828 14.828a4 4 0 0 1-5.656 0"/>
+                                <path d="M9.172 9.172a4 4 0 0 1 5.656 0"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Texturizing & Drawing</h3>
+                            <p class="step-description">Fibers are drawn, crimped, and textured to achieve the desired properties for different applications. This process enhances durability, elasticity, and feel of the final thread.</p>
+                            <ul class="step-features">
+                                <li>Variable draw ratio for different applications</li>
+                                <li>Crimping for enhanced loft and feel</li>
+                                <li>Quality testing at multiple points</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step-detailed">
+                        <div class="step-number">06</div>
+                        <div class="step-visual">
+                            <svg class="step-icon-large" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="10" rx="2"/>
+                                <circle cx="12" cy="5" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="step-content">
+                            <h3 class="step-title">Final Products</h3>
+                            <p class="step-description">The finished polyester thread and fiberfill are packaged and prepared for shipment to manufacturers who create pillows, cushions, and other soft goods, completing the circular economy cycle.</p>
+                            <ul class="step-features">
+                                <li>Multiple product formats available</li>
+                                <li>Custom packaging and labeling</li>
+                                <li>Full traceability and certification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lifecycle Diagram -->
+        <section class="section lifecycle-section">
+            <div class="container">
+                <div class="section__header text-center">
+                    <h2 class="section__title">Complete Lifecycle Visualization</h2>
+                    <p class="section__subtitle">Follow the transformation journey from discarded bottles to sustainable products</p>
+                </div>
+                
+                <div class="lifecycle-diagram" role="img" aria-label="Plastic bottle recycling lifecycle diagram">
+                    <svg viewBox="0 0 1000 600" fill="none" xmlns="http://www.w3.org/2000/svg" class="lifecycle-svg">
+                        <!-- Background -->
+                        <rect width="1000" height="600" fill="var(--color-bg)"/>
+                        
+                        <!-- Collection Stage -->
+                        <g id="collection" tabindex="0" role="button" aria-label="Collection stage: Plastic bottles are collected from various sources">
+                            <circle cx="150" cy="150" r="40" fill="var(--color-primary)" opacity="0.2"/>
+                            <rect x="130" y="130" width="40" height="40" rx="5" fill="var(--color-primary)"/>
+                            <text x="150" y="210" text-anchor="middle" fill="var(--color-ink)" font-size="14" font-weight="600">Collection</text>
+                        </g>
+                        
+                        <!-- Cleaning Stage -->
+                        <g id="cleaning" tabindex="0" role="button" aria-label="Cleaning stage: Bottles are washed and prepared">
+                            <circle cx="350" cy="150" r="40" fill="var(--color-accent)" opacity="0.2"/>
+                            <circle cx="350" cy="150" r="20" fill="var(--color-accent)"/>
+                            <text x="350" y="210" text-anchor="middle" fill="var(--color-ink)" font-size="14" font-weight="600">Cleaning</text>
+                        </g>
+                        
+                        <!-- Pelletizing Stage -->
+                        <g id="pelletizing" tabindex="0" role="button" aria-label="Pelletizing stage: Clean flakes become uniform pellets">
+                            <circle cx="550" cy="150" r="40" fill="var(--color-teal)" opacity="0.2"/>
+                            <circle cx="550" cy="150" r="25" fill="var(--color-teal)"/>
+                            <circle cx="550" cy="150" r="10" fill="var(--color-surface)"/>
+                            <text x="550" y="210" text-anchor="middle" fill="var(--color-ink)" font-size="14" font-weight="600">Pelletizing</text>
+                        </g>
+                        
+                        <!-- Extrusion Stage -->
+                        <g id="extrusion" tabindex="0" role="button" aria-label="Extrusion stage: Pellets become continuous fiber">
+                            <circle cx="750" cy="150" r="40" fill="var(--color-primary)" opacity="0.2"/>
+                            <path d="M730 150 L770 140 L770 160 Z" fill="var(--color-primary)"/>
+                            <text x="750" y="210" text-anchor="middle" fill="var(--color-ink)" font-size="14" font-weight="600">Extrusion</text>
+                        </g>
+                        
+                        <!-- Texturizing Stage -->
+                        <g id="texturizing" tabindex="0" role="button" aria-label="Texturizing stage: Fibers are processed for optimal properties">
+                            <circle cx="750" cy="350" r="40" fill="var(--color-accent)" opacity="0.2"/>
+                            <path d="M730 340 Q750 330 770 340 Q750 350 730 360 Q750 370 770 360" stroke="var(--color-accent)" stroke-width="3" fill="none"/>
+                            <text x="750" y="410" text-anchor="middle" fill="var(--color-ink)" font-size="14" font-weight="600">Texturizing</text>
+                        </g>
+                        
+                        <!-- Products Stage -->
+                        <g id="products" tabindex="0" role="button" aria-label="Final products: Sustainable pillows and soft goods">
+                            <circle cx="350" cy="450" r="40" fill="var(--color-teal)" opacity="0.2"/>
+                            <rect x="330" y="440" width="40" height="20" rx="10" fill="var(--color-teal)"/>
+                            <text x="350" y="510" text-anchor="middle" fill="var(--color-ink)" font-size="14" font-weight="600">Products</text>
+                        </g>
+                        
+                        <!-- Flow Arrows -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="var(--color-primary)"/>
+                            </marker>
+                        </defs>
+                        
+                        <!-- Collection to Cleaning -->
+                        <path d="M190 150 L310 150" stroke="var(--color-primary)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        
+                        <!-- Cleaning to Pelletizing -->
+                        <path d="M390 150 L510 150" stroke="var(--color-primary)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        
+                        <!-- Pelletizing to Extrusion -->
+                        <path d="M590 150 L710 150" stroke="var(--color-primary)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        
+                        <!-- Extrusion to Texturizing -->
+                        <path d="M750 190 L750 310" stroke="var(--color-primary)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        
+                        <!-- Texturizing to Products -->
+                        <path d="M710 350 L550 400 L390 450" stroke="var(--color-primary)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                        
+                        <!-- Circular arrow back to collection -->
+                        <path d="M310 450 L150 400 L150 190" stroke="var(--color-accent)" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+                        <text x="100" y="300" fill="var(--color-accent)" font-size="12" transform="rotate(-90 100 300)">Circular Economy</text>
+                    </svg>
+                </div>
+                
+                <div class="lifecycle-legend">
+                    <h3>Process Flow Legend</h3>
+                    <div class="legend-items">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: var(--color-primary);"></div>
+                            <span>Primary Process Steps</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: var(--color-accent);"></div>
+                            <span>Quality Enhancement</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-line"></div>
+                            <span>Circular Economy Loop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality & Certifications -->
+        <section class="section quality-section">
+            <div class="container">
+                <div class="section__header text-center">
+                    <h2 class="section__title">Quality Assurance & Certifications</h2>
+                    <p class="section__subtitle">Every step of our process is monitored and certified to ensure the highest quality standards</p>
+                </div>
+                
+                <div class="quality-grid">
+                    <div class="quality-card">
+                        <div class="quality-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                                <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                                <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"/>
+                                <path d="M12 21c0-1 1-3 3-3s3 2 3 3-1 3-3 3-3-2-3-3"/>
+                            </svg>
+                        </div>
+                        <h3>ISO 9001:2015</h3>
+                        <p>Quality Management System certification ensuring consistent product quality and customer satisfaction.</p>
+                    </div>
+                    
+                    <div class="quality-card">
+                        <div class="quality-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h3>GRS Certified</h3>
+                        <p>Global Recycled Standard certification verifying our recycled content and supply chain practices.</p>
+                    </div>
+                    
+                    <div class="quality-card">
+                        <div class="quality-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                            </svg>
+                        </div>
+                        <h3>OEKO-TEX</h3>
+                        <p>Standard 100 certification ensuring our products are free from harmful substances and safe for human use.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="section download-section">
+            <div class="container">
+                <div class="download-content text-center">
+                    <h2>Learn More About Our Process</h2>
+                    <p>Download our comprehensive process guide for detailed technical specifications and quality standards.</p>
+                    <div class="download-actions">
+                        <a href="#" class="btn btn--primary" onclick="handleDownload('process-guide')">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7,10 12,15 17,10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Process Guide PDF
+                        </a>
+                        <a href="#" class="btn btn--secondary" onclick="handleDownload('technical-specs')">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10,9 9,9 8,9"/>
+                            </svg>
+                            Technical Specifications
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-content text-center">
+                    <h2 class="cta-title">Ready to Partner With Us?</h2>
+                    <p class="cta-subtitle">Experience the quality and sustainability of our recycled polyester thread. Request a quote or sample today.</p>
+                    <div class="cta-actions">
+                        <button class="btn btn--primary btn--large" onclick="openQuoteModal()">Request a Quote</button>
+                        <a href="/contact.html" class="btn btn--secondary btn--large">Contact Our Team</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__logo">
+                        <svg width="100" height="32" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 8L16 24L24 8H32L20 32H12L0 8H8Z" fill="currentColor"/>
+                            <path d="M40 12C40 10.9 40.9 10 42 10H54C55.1 10 56 10.9 56 12V16H48V14H44V26H48V24H56V28C56 29.1 55.1 30 54 30H42C40.9 30 40 29.1 40 28V12Z" fill="currentColor"/>
+                            <path d="M60 30V10H68V26H76V10H84V30H76V18H68V30H60Z" fill="currentColor"/>
+                            <path d="M88 20C88 14.5 92.5 10 98 10C103.5 10 108 14.5 108 20C108 25.5 103.5 30 98 30C92.5 30 88 25.5 88 20ZM96 20C96 21.1 96.9 22 98 22C99.1 22 100 21.1 100 20C100 18.9 99.1 18 98 18C96.9 18 96 18.9 96 20Z" fill="currentColor"/>
+                            <path d="M112 24L118 10H120L116 24L120 30H118L112 24Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <p class="footer__description">Transforming plastic bottles into sustainable solutions for a better tomorrow.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="LinkedIn" class="social-link">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.618 5.367 11.986 11.988 11.986 6.618 0 11.986-5.368 11.986-11.986C24.003 5.367 18.635.001 12.017.001zM8.449 16.988c-1.297 0-2.348-1.051-2.348-2.348 0-1.297 1.051-2.348 2.348-2.348 1.297 0 2.347 1.051 2.347 2.348 0 1.297-1.05 2.348-2.347 2.348zm3.563 0c-1.297 0-2.348-1.051-2.348-2.348 0-1.297 1.051-2.348 2.348-2.348s2.348 1.051 2.348 2.348c0 1.297-1.051 2.348-2.348 2.348z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/careers.html">Careers</a></li>
+                        <li><a href="/impact.html">Our Impact</a></li>
+                        <li><a href="/blog.html">News</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Products</h4>
+                    <ul class="footer__links">
+                        <li><a href="/products.html">All Products</a></li>
+                        <li><a href="/products.html#pillows">Pillows</a></li>
+                        <li><a href="/products.html#fiberfill">Fiberfill</a></li>
+                        <li><a href="/products.html#yarn">Thread & Yarn</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Support</h4>
+                    <ul class="footer__links">
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/privacy.html">Privacy</a></li>
+                        <li><a href="/terms.html">Terms</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact">
+                        <p><a href="mailto:hello@velox.example">hello@velox.example</a></p>
+                        <p><a href="tel:+0000000000">+000 000 0000</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 Velox. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div class="modal" id="quote-modal" role="dialog" aria-labelledby="quote-modal-title" aria-hidden="true">
+        <div class="modal__backdrop" onclick="closeQuoteModal()"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 id="quote-modal-title">Request a Quote</h2>
+                <button class="modal__close" onclick="closeQuoteModal()" aria-label="Close modal">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <form class="quote-form" onsubmit="handleQuote(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="quote-name">Name *</label>
+                        <input type="text" id="quote-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-email">Email *</label>
+                        <input type="email" id="quote-email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="quote-company">Company</label>
+                        <input type="text" id="quote-company" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-volume">Expected Volume</label>
+                        <input type="text" id="quote-volume" name="volume" placeholder="e.g., 1000 kg/month">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="quote-product">Product Interest</label>
+                    <select id="quote-product" name="product">
+                        <option value="">Select a product...</option>
+                        <option value="fiberfill">Fiberfill</option>
+                        <option value="thread">Thread & Yarn</option>
+                        <option value="pillows">Finished Pillows</option>
+                        <option value="custom">Custom Solution</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quote-message">Message</label>
+                    <textarea id="quote-message" name="message" rows="4" placeholder="Tell us about your requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full">Send Quote Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="alert" aria-live="polite" aria-atomic="true">
+        <div class="toast-content">
+            <span class="toast-message"></span>
+            <button class="toast-close" onclick="hideToast()" aria-label="Close notification">×</button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5,12 12,5 19,12"></polyline>
+        </svg>
+    </button>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+    <script>
+        // Process page specific functionality
+        function handleDownload(type) {
+            // Simulate download tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'download', {
+                    event_category: 'engagement',
+                    event_label: type
+                });
+            }
+            
+            window.showToast('Download will begin shortly. Thank you for your interest!', 'success');
+            console.log('Download requested:', type);
+        }
+        
+        // Enhanced lifecycle diagram interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            const diagramElements = document.querySelectorAll('#collection, #cleaning, #pelletizing, #extrusion, #texturizing, #products');
+            
+            diagramElements.forEach(element => {
+                element.addEventListener('click', function() {
+                    const stage = this.id;
+                    showStageDetails(stage);
+                });
+                
+                element.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const stage = this.id;
+                        showStageDetails(stage);
+                    }
+                });
+            });
+        });
+        
+        function showStageDetails(stage) {
+            const stageInfo = {
+                collection: "Collection: PET bottles are gathered from municipal recycling programs and sorted by color and quality.",
+                cleaning: "Cleaning: Bottles undergo hot wash treatment to remove labels, adhesives, and contaminants.",
+                pelletizing: "Pelletizing: Clean flakes are melted and reformed into uniform PET pellets through controlled heating.",
+                extrusion: "Extrusion: Pellets are heated and extruded through precision spinnerets to create continuous fibers.",
+                texturizing: "Texturizing: Fibers are drawn, crimped, and textured to achieve desired properties for different applications.",
+                products: "Products: Finished polyester thread and fiberfill are packaged for manufacturers creating sustainable goods."
+            };
+            
+            window.showToast(stageInfo[stage] || 'Stage information not available', 'success');
+        }
+    </script>
+
+    <style>
+        /* Process page specific styles */
+        .process-timeline-detailed {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-9);
+            margin: var(--space-8) 0;
+        }
+
+        .timeline-step-detailed {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: var(--space-6);
+            align-items: start;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-step-detailed {
+                grid-template-columns: auto auto 1fr;
+            }
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .step-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            background-color: var(--color-surface);
+            border: 3px solid var(--color-primary);
+            border-radius: 50%;
+            margin-bottom: var(--space-4);
+        }
+
+        .step-icon-large {
+            color: var(--color-primary);
+        }
+
+        .step-content h3 {
+            margin-bottom: var(--space-3);
+            color: var(--color-ink);
+        }
+
+        .step-features {
+            list-style: none;
+            margin-top: var(--space-4);
+        }
+
+        .step-features li {
+            position: relative;
+            padding-left: var(--space-5);
+            margin-bottom: var(--space-2);
+            color: var(--color-muted);
+            font-size: 0.875rem;
+        }
+
+        .step-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .lifecycle-section {
+            background-color: var(--color-surface);
+        }
+
+        .lifecycle-svg {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            border-radius: var(--radius-lg);
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+        }
+
+        .lifecycle-svg g {
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lifecycle-svg g:hover,
+        .lifecycle-svg g:focus {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        .lifecycle-legend {
+            margin-top: var(--space-6);
+            padding: var(--space-5);
+            background-color: var(--color-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--color-border);
+        }
+
+        .lifecycle-legend h3 {
+            margin-bottom: var(--space-4);
+            color: var(--color-ink);
+        }
+
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: 0.875rem;
+            color: var(--color-muted);
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+        }
+
+        .legend-line {
+            width: 20px;
+            height: 2px;
+            background: linear-gradient(to right, var(--color-accent), transparent);
+            border-radius: 1px;
+        }
+
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .quality-card {
+            text-align: center;
+            padding: var(--space-6);
+            background-color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            transition: var(--transition);
+        }
+
+        .quality-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .quality-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            margin-bottom: var(--space-4);
+        }
+
+        .quality-card h3 {
+            margin-bottom: var(--space-3);
+            color: var(--color-ink);
+        }
+
+        .download-section {
+            background: linear-gradient(135deg, var(--color-bg), var(--color-surface));
+        }
+
+        .download-actions {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+            align-items: center;
+            margin-top: var(--space-5);
+        }
+
+        @media (min-width: 640px) {
+            .download-actions {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        /* Timeline connector for larger screens */
+        @media (min-width: 768px) {
+            .timeline-step-detailed:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                left: 50px;
+                top: 120px;
+                bottom: -60px;
+                width: 2px;
+                background: linear-gradient(to bottom, var(--color-primary), var(--color-border));
+            }
+        }
+    </style>
+</body>
+</html>
